@@ -1,0 +1,71 @@
+
+<div class="row">
+			
+			
+			
+			
+	<div class="">
+		<!-- ****** NAVIGATION WIDGET ******* -->
+		<div id="nav-widget" class="btn-group btn-group-justified">
+			<div class="btn-group">
+				<a href="../"><button type="button" class="btn text-uppercase see"><i class="fa fa-camera fa-2x"></i>  See </button></a>
+			</div>
+			<div class="btn-group">
+				<a href="index.html"><button type="button" class="btn text-uppercase active eat"><i class="fa fa-cutlery fa-2x"></i>  Eat</button></a>
+			</div>
+			<div class="btn-group">
+				<a href="../watch"><button type="button" class="btn text-uppercase watch"><i class="fa fa-ticket fa-2x"></i>  Watch </button></a>
+			</div>
+		</div>
+	</div>
+</div>
+			
+   
+   
+<div class="row">
+	<!-- COLUMN ONE -->
+	<div>
+
+
+		<div ng-show="loading"  style="text-align:center;"><img src="../images/ellipsis.svg"></div>
+
+			
+				
+		<div class="movie-card panel" ng-repeat="business in businesses" ng-show="!business.isclosed && business.rating > 4 && business.review_count > 6 ">
+			<div class="movie-panel" style="background: black; max-height:390px;overflow:hidden">
+				<a ng-href="http://maps.google.com/?q={{business.name}}+montreal&radius=3"><img ng-src="{{business.image_url.replace('/ms.jpg', '/o.jpg')}}" width="390"></a>
+			</div>
+			<div class="panel-body">
+				<div class="media">
+					<div class="media-body" style="text-align:center">
+						<h2 class="media-heading">{{business.name}}</h2>
+						{{ business.snippet_text }}
+
+					</div>
+				</div>
+			</div>
+			<div class="actions panel-footer eateries">
+						{{ business.categories[0][0] }} - {{ business.location.display_address[0] }}
+			</div>
+			<div class="actions panel-footer">
+               <div class="btn-group btn-group-justified">
+                  <a class="btn btn-default" role="button" ng-href="http://maps.google.com/?q={{business.name}}+montreal&radius=3"><i class="fa fa-location-arrow"></i> Go</a>
+                  <a class="btn btn-default share" role="button" ng-href="https://twitter.com/intent/tweet?text=Going+to+{{business.name}}+http%3A%2F%2FExpMontreal.com%2Feat"><i class="fa fa-users"></i> Share</a>
+                  <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{business.rating }} </a>
+               </div>
+            </div>
+			
+
+		</div>
+				
+				
+			<center id="signature">Crafted with ♥ by <a href="http://twitter.com/heri">heri</a></center>
+				
+				
+	</div>
+      
+      
+     
+
+</div>
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title>ExpMontreal</title>	
+	<meta name="description" content="What to do today in Montreal. Top things to see, eat, experience">
+
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="../css/awesome.min.css" rel="stylesheet">
+	
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+	<script src="../js/awesome.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+	<script src="../js/angularjs-geolocation.min.js"></script>
+	<script src="../js/movieApp.js"></script>
+	
+	
+</head>
+<body ng-app="movieApp" id="montreal-social">
+	<div class="container" style="width:390px">
+		<div class="row">			
+			
+			<div class="">
+				<div class="row">
+					<div class="col-xs-12">
+						<!-- ****** WEATHER WIDGET ******* -->
+						<div id="weather-widget" class="panel">
+							<div class="panel-heading text-center">
+								<div id="current"></div>
+									Montr&#233;al, QC
+								</div>
+								<div class="panel-footer" id="hiTemp"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+
+			<span ng-controller="movieController" data-ng-init="search()">
+				<div movies>
+				</div>
+				<div login>
+				</div>
+			</span>
+			
+		</div>
+		
+		
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+		<div class="row">
+			
+			
+			
+			
+			<div class="">
+				<!-- ****** NAVIGATION WIDGET ******* -->
+				<div id="nav-widget" class="btn-group btn-group-justified">
+					<div class="btn-group">
+						<a href="index.html"><button type="button" class="btn text-uppercase active see"><i class="fa fa-camera fa-2x"></i>  See </button></a>
+					</div>
+					<div class="btn-group">
+						<a href="eat/"><button type="button" class="btn text-uppercase eat"><i class="fa fa-cutlery fa-2x"></i>  Eat</button></a>
+					</div>
+					<div class="btn-group">
+						<a href="watch/"><button type="button" class="btn text-uppercase watch"><i class="fa fa-ticket fa-2x"></i>  Watch </button></a>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+			
+   
+   
+		<div class="row">
+			<!-- COLUMN ONE -->
+			<div class="">
+
+		    <div ng-show="loading"  style="text-align:center;"><img src="images/ellipsis.svg"></div>
+			
+	    <div class="movie-card panel" ng-show="photo.users_rating > 3" ng-repeat="photo in result">
+			<div class="movie-panel" style="background: black;">
+				<a ng-href="https://www.google.com/maps?q=loc:{{photo.latitude}},{{photo.longitude}}&radius=3"><img ng-src="{{photo.url_z}}" class="flickr-photo" width="390px" style=""></a>
+			</div>
+			<div class="panel-footer">{{photo.title}}</div>			
+			<div class="actions panel-footer eateries"><reverse-geocode lat="{{photo.latitude}}" lng="{{photo.longitude}}"></reverse-geocode></div>
+			
+			
+			<div class="actions panel-footer">
+               <div class="btn-group btn-group-justified">
+                  <a class="btn btn-default" role="button" ng-href="http://maps.google.com/maps?q=loc:{{photo.latitude}},{{photo.longitude}}&radius=1"><i class="fa fa-location-arrow"></i> Go</a>
+                  <a class="btn btn-default share" role="button" ng-href="https://twitter.com/intent/tweet?text=Going+to+{{photo.title}}+http%3A%2F%2FExpMontreal.com"><i class="fa fa-users"></i> Share</a>
+                  <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{photo.users_rating }}</a>
+               </div>
+            </div>
+			
+			
+			
+			
+		</div>
+				
+				
+			<center id="signature">Crafted with ♥ by <a href="http://twitter.com/heri">heri</a></center>
+			</div>
+    	</div>

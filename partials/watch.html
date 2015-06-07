@@ -1,0 +1,80 @@
+<div class="row">
+			
+	<div class="">
+		<!-- ****** NAVIGATION WIDGET ******* -->
+		<div id="nav-widget" class="btn-group btn-group-justified">
+			<div class="btn-group">
+				<a href="../"><button type="button" class="btn text-uppercase see"><i class="fa fa-camera fa-2x"></i>  See </button></a>
+			</div>
+			<div class="btn-group">
+				<a href="../eat"><button type="button" class="btn text-uppercase eat"><i class="fa fa-cutlery fa-2x"></i>  Eat</button></a>
+			</div>
+			<div class="btn-group">
+				<a href="index.html"><button type="button" class="btn text-uppercase active watch"><i class="fa fa-ticket fa-2x"></i>  Watch </button></a>
+			</div>
+		</div>
+	</div>
+</div>
+			
+   
+   
+<div class="row">
+	<!-- COLUMN ONE -->
+	<!-- <div class=""   ng-controller="movieController" data-ng-init="search()"> -->
+
+		<div ng-show="loading"  style="text-align:center;"><img src="../images/ellipsis.svg"></div>
+				
+		<div class="movie-card panel"  ng-repeat="item in result" ng-show=" item.ratings.critics_score > 84" id="profile-widget">
+			<div class="movie-panel">
+				<a ng-ref="http://maps.google.com/?q={{item.showtimes.location}}+montreal&radius=3"><img ng-src="{{ item.bigPoster }}" width="390px"></a>
+			</div>
+			<div class="panel-body">
+				<div class="media">
+					<div class="media-body" style="text-align:center">
+						<!-- <h2 class="media-heading">{{ item.title }} </h2> -->
+						{{ item.plot }}
+						
+						<br/>
+						
+
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="actions panel-footer showtimes">
+			
+				{{ item.Director }} - {{ item.genre }}
+			
+				<span ng-show="item.Awards && item.Awards != 'N/A'">, {{ item.Awards}}</span>
+				
+				<span ng-show="item.abridged_cast[0].name">
+					<br/>{{ item.abridged_cast[0].name}}
+				</span>
+				<span ng-show="item.abridged_cast[1].name">
+					and {{ item.abridged_cast[1].name}}
+				</span>
+            </div>
+			
+			<div class="actions panel-footer showtimes">
+				
+				{{ item.showtimes.times}} 	<br/>			{{ item.showtimes.location}}
+            </div>
+			
+			<div class="actions panel-footer">
+               <div class="btn-group btn-group-justified">
+                  <a class="btn btn-default" role="button" ng-href="http://maps.google.com/?q={{item.showtimes.location}}&radius=3"><i class="fa fa-location-arrow"></i> Go</a>
+                  <a class="btn btn-default share" role="button" ng-href="https://twitter.com/intent/tweet?text=Going+to+see+{{item.title}}+today+http%3A%2F%2FExpMontreal.com%2Fwatch"><i class="fa fa-users"></i> Share</a>
+                  <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{item.ratings.critics_score / 20}}</a>
+               </div>
+            </div>
+		</div>
+				
+				
+			<center id="signature">Crafted with ♥ by <a href="http://twitter.com/heri">heri</a></center>
+				
+				
+	<!-- </div> -->
+      
+
+</div>
