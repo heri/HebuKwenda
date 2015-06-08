@@ -1,6 +1,7 @@
 function getTimes(e){switch(e){case"Mad Max: Fury Road":return{times:"Today 1:15, 1:55, 4:05, 4:50, 6:55, 7:40, 9:55, 10:20, 10:25",location:"Banque Scotia Montreal 977 rue Ste-Catherine O.",trailer:"https://www.youtube.com/watch?v=XYGzRB4Pnq8",image:"http://heri.github.io/montreal/images/madmax.jpg"};
 case"Ex Machina":return{times:"Today 1:45, 4:30, 7:15, 9:15, 10:00",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=hEJnMQG9ev8",image:"http://heri.github.io/montreal/images/exmachina.jpg"};
 case"Far From the Madding Crowd":return{times:"Today 4:30, 7:20, 10:10",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/maddingcrowd.jpg"};
+case"Spy":return{times:"Today 12:15, 3:15, 6:15, 9:00",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/spy.jpg"};
 default:return{times:"Today",location:"Banque Scotia Montreal 977 rue Ste-Catherine O.", image:"http://heri.github.io/montreal/images/maddingcrowd.jpg"}}}
 	
 	
@@ -62,7 +63,7 @@ app.controller('movieController', function($scope, $http, movieSearch){
 			var movies = data.movies;
 			$scope.loading = false;
 	        movies.forEach(function (movie) {
-				if (movie.ratings.critics_score > 84){
+				if (movie.ratings.critics_score > 89){
 					search = movie.title.replace(' ', '+');
 	   		   	 	var posterUrl = 'http://www.omdbapi.com/?t=' + search + '&y=&plot=short&r=json';
 	   		   	 	$http.get(posterUrl).success(function(response) { 

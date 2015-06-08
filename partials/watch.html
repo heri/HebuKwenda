@@ -24,7 +24,7 @@
 
 		<div ng-show="loading"  style="text-align:center;"><img src="../images/ellipsis.svg"></div>
 				
-		<div class="movie-card panel"  ng-repeat="item in result" ng-show=" item.ratings.critics_score > 84" id="profile-widget">
+		<div class="movie-card panel"  ng-repeat="item in result" ng-show=" item.ratings.critics_score > 89" id="profile-widget">
 			<div class="movie-panel">
 				<a ng-ref="http://maps.google.com/?q={{item.showtimes.location}}+montreal&radius=3"><img ng-src="{{ item.showtimes.image }}" width="390px"></a>
 			</div>
