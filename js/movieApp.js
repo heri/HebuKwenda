@@ -90,13 +90,17 @@ app.controller('movieController', function($scope, $http, movieSearch){
 
 app.directive('movies', function() {
 		return {
-			templateUrl: '../partials/watch.html'
+			templateUrl: '../partials/watch.html',
+   			 controller: 'movieController',
+    		resolve: movieController.resolve
 		};
 	});
 
 app.directive('login', function() {
 		return {
 			templateUrl: '../partials/login.html'
+   			 controller: 'movieController',
+    		resolve: movieController.resolve
 		};
 	});
 	
