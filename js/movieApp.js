@@ -27,7 +27,7 @@ app.factory('movieSearch', function($resource){
 
 			var api = $resource('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=:key&page_limit=:limit&callback=JSON_CALLBACK', {
 				key: 'dpjxf3xsjbpj5wpmduveeseb',
-				limit: 16
+				limit: 32
 			}, {
 				fetch:{method:'JSONP'}
 			});
