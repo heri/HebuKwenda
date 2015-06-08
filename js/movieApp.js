@@ -98,7 +98,7 @@ app.directive('movies', function() {
 
 app.directive('login', function() {
 		return {
-			templateUrl: '../partials/login.html'
+			templateUrl: '../partials/login.html',
    			 controller: 'movieController',
     		resolve: movieController.resolve
 		};
