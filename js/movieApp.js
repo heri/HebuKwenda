@@ -6,7 +6,6 @@ var app = angular.module("movieApp", ['ui.bootstrap', 'geolocation', 'ngResource
 	$httpProvider.defaults.withCredentials = false;
 	$httpProvider.defaults.headers.common["Accept"] = "application/json";
 	$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
-	
     }]);
 
 
