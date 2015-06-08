@@ -1,6 +1,6 @@
 function getTimes(e){switch(e){case"Mad Max: Fury Road":return{times:"Today 1:15, 1:55, 4:05, 4:50, 6:55, 7:40, 9:55, 10:20, 10:25",location:"Banque Scotia Montreal 977 rue Ste-Catherine O.",trailer:"https://www.youtube.com/watch?v=XYGzRB4Pnq8"};case"Ex Machina":return{times:"Today 1:45, 4:30, 7:15, 9:15, 10:00",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=hEJnMQG9ev8"};case"Far From the Madding Crowd":return{times:"Today 4:30, 7:20, 10:10",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c"};default:return{times:"Today -",location:"Banque Scotia Montreal 977 rue Ste-Catherine O."}}}
 
-var app = angular.module("movieApp", ['ui.bootstrap', 'geolocation', 'ngResource']).config(['$httpProvider', function($httpProvider) {
+var app = angular.module("movieApp", ['ui.bootstrap', 'geolocation', 'ngResource', 'ngRoute']).config(['$httpProvider', function($httpProvider) {
 	delete $httpProvider.defaults.headers.common["X-Requested-With"];
 	$httpProvider.defaults.useXDomain = true;
 	$httpProvider.defaults.withCredentials = false;
