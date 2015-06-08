@@ -70,10 +70,11 @@ app.controller('movieController', function($scope, $http, movieSearch){
 						movie['Awards']= response.Awards;
 						movie['showtimes'] = getTimes(movie.title);
 						movie['plot'] = response.Plot;
-						
 						console.log(movie['showtimes']);
 
-					}).error( );
+					}).error( function(response) {
+						console.log(response);
+					} );
 					
 				}
 	         });
