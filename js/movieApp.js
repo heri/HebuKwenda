@@ -3,8 +3,8 @@ case"Ex Machina":return{times:"Today 1:45, 4:30, 7:15, 9:15, 10:00",location:"Ci
 case"Far From the Madding Crowd":return{times:"Today 4:30, 7:20, 10:10",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/maddingcrowd.jpg"};
 case"Spy":return{times:"Today 12:15, 3:15, 6:15, 9:00",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/spy.jpg"};
 case"I'll See You in My Dreams":return{times:"Today 1:20, 3:55, 6:40, 9:30",location:"Cineplex Forum 2313 Ste-Catherine Ouest",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/dreams.jpg"};
-case"Iris":return{times:"Today 1:30, 3:15, 7:00",location:"Cinema du Parc 3575 ave du Parc, Montréal   H2X 3P9",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/monkey.jpg"};
-case"Monkey Kingdom":return{times:"Soon",location:"Cinema du Parc",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/iris.jpg"};
+case"Iris":return{times:"Today 1:30, 3:15, 7:00",location:"Cinema du Parc 3575 ave du Parc, Montréal   H2X 3P9",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/iris.jpg"};
+case"Monkey Kingdom":return{times:"Soon",location:"Cinema du Parc",trailer:"https://www.youtube.com/watch?v=WCm1XNVD_0c", image:"http://heri.github.io/montreal/images/monkey.jpg"};
 default:return{times:"Soon",location:"Cinema", image:"http://heri.github.io/montreal/images/maddingcrowd.jpg"}}}
 	
 	

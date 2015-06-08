@@ -1,6 +1,6 @@
 function randomString(n,e){for(var r="",t=n;t>0;--t)r+=e[Math.round(Math.random()*(e.length-1))];return r}function getNeed(){var n=new Date,e=n.getHours(),r="";return r=9>e&&e>5?"breakfast":11>e&&e>8?"coffee":14>e&&e>10?"lunch":e>17&&21>e?"dinner":e>20?"beer":"fun"}
 
-var app = angular.module('eat', ['geolocation']);
+var app = angular.module('eat', ['geolocation', 'ngRoute']);
 
 
 app.controller('MainCtrl', ['$scope', 'MyYelpAPI', 'geolocation', function($scope, MyYelpAPI, geolocation) {
