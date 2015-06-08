@@ -26,7 +26,7 @@
 				
 		<div class="movie-card panel"  ng-repeat="item in result" ng-show=" item.ratings.critics_score > 84" id="profile-widget">
 			<div class="movie-panel">
-				<a ng-ref="http://maps.google.com/?q={{item.showtimes.location}}+montreal&radius=3"><img ng-src="{{ item.bigPoster }}" width="390px"></a>
+				<a ng-ref="http://maps.google.com/?q={{item.showtimes.location}}+montreal&radius=3"><img ng-src="{{ item.showtimes.image }}" width="390px"></a>
 			</div>
 			<div class="panel-body">
 				<div class="media">
