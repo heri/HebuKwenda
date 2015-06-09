@@ -575,5 +575,3 @@ background-attachment: fixed;
     font-size: 0.9em;
     text-align: center;
 }
-
-@media (min-width: 1200px) { .container {max-width:570px;} }
