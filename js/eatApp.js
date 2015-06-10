@@ -42,20 +42,14 @@ app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function(
 			var params = {
 				callback: 'angular.callbacks._0',
 				ll: lat + ',' + lon,
-				oauth_consumer_key: 'fp2-QEWAkpGNtEpbNg0Bqw', //Consumer Key
-				oauth_token: 'et0LsDh2Q7oEwBIuCK_fESvMclBMXoNI', //Token
-				oauth_signature_method: "HMAC-SHA1",
-				oauth_timestamp: new Date().getTime(),
-				oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+				oauth_consumer_key: 'fp2-QEWAkpGNtEpbNg0Bqw',oauth_token: 'et0LsDh2Q7oEwBIuCK_fESvMclBMXoNI',oauth_signature_method: "HMAC-SHA1",oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),oauth_timestamp: new Date().getTime(),
 				term: getNeed(),
 				sort: '2',
-				limit: '7',
+				limit: '5',
 				radius_filter: '1200',
 				category_filter: 'restaurants,coffee,bars,landmarks,arts'
 			};
-			var consumerSecret = 'cjt65LRYSM1iqU1766CQLrvYmEA'; //Consumer Secret
-			var tokenSecret = 'zYMatKtjA07897IQZDqyUgxpaR4'; //Token Secret
-			var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
+			var consumerSecret = 'cjt65LRYSM1iqU1766CQLrvYmEA';var tokenSecret = 'zYMatKtjA07897IQZDqyUgxpaR4';var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
 			params['oauth_signature'] = signature;
 			$http.jsonp(url, {params: params}).success(callback);
 		}

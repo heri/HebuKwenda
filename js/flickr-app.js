@@ -21,7 +21,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 	$scope.orderByNeed = function(item) {
 		if ($scope.geoData && item.users_rating && item.users_rating > 3) {
 			a = item.latitude - $scope.geoData.latitude;b = item.longitude - $scope.geoData.longitude;
-			return - item.views - (10 * item.users_rating) - (1500 * Math.sqrt( a * a + b * b)) ;
+			return - item.views - (12 * item.users_rating) - (1700 * Math.sqrt( a * a + b * b)) ;
 		} else {return 0;}
 	}
 
