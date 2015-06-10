@@ -3,7 +3,7 @@ function randomString(n,e){for(var r="",t=n;t>0;--t)r+=e[Math.round(Math.random(
 var app = angular.module('eat', ['geolocation', 'ngRoute']);
 
 
-app.controller('MainCtrl', ['$scope', 'MyYelpAPI', 'geolocation', function($scope, MyYelpAPI, geolocation) {
+app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function($scope, MyYelpAPI, geolocation) {
 	$scope.businesses = [];
 	$scope.loading = true;
 	$scope.modalOpened = false;

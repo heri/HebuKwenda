@@ -24,12 +24,11 @@
    
    
 		<div class="row">
-			<!-- COLUMN ONE -->
+			
 			<div class="">
 
 		    <div ng-show="loading"  style="text-align:center;"><img src="images/ellipsis.svg"></div>
-			
-	    <div class="movie-card panel" ng-show="photo.users_rating > 3" ng-repeat="photo in result">
+	    <div class="movie-card panel" ng-show="photo.users_rating > 3" ng-repeat="photo in result | orderBy:orderByNeed">
 			<div class="movie-panel" style="background: #f5f5f5;">
 				<a ng-href="https://www.google.com/maps?q=loc:{{photo.latitude}},{{photo.longitude}}&radius=3"  class="center-block"><img ng-src="{{photo.url_z}}" class="flickr-photo center-block" width="390px"></a>
 			</div>
