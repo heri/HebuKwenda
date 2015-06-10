@@ -24,7 +24,7 @@
 				
 		<div class="movie-card panel"  ng-repeat="item in result" ng-show=" item.ratings.critics_score > 89 && item.showtimes.times != 'Soon'" id="profile-widget">
 			<div class="movie-panel" style="background-color:#f5f5f5">
-				<a ng-ref="http://maps.google.com/?q={{item.showtimes.location}}+montreal&radius=3"><img ng-src="{{ item.showtimes.image }}" width="390px" class="center-block"></a>
+				<a ng-ref="http://maps.google.com/?q={{item.showtimes.location}}+montreal&radius=3"><img ng-src="{{ item.showtimes.image }}" class="center-block movie-photo"></a>
 			</div>
 			<div class="panel-body">
 				<div class="media">
