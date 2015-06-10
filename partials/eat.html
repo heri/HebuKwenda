@@ -51,7 +51,7 @@
                <div class="btn-group btn-group-justified">
                   <a class="btn btn-default" role="button" ng-href="http://maps.google.com/?q={{business.name}}+montreal&radius=3"><i class="fa fa-location-arrow"></i> Go</a>
                   <a class="btn btn-default share" role="button" ng-href="https://twitter.com/intent/tweet?text=Going+to+{{business.name}}+http%3A%2F%2FHebuKwenda.com%2Feat"><i class="fa fa-users"></i> Share</a>
-                  <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{business.rating }} </a>
+                  <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{(business.rating - 4) * 10}} </a>
                </div>
             </div>
 			
