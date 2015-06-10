@@ -31,7 +31,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 		console.log($scope.geoData);
 		current = new Date().getTime();
 
-		var params={api_key:"8e8b0a8d39a7af07485e7b992084a350",per_page:10,format:"json",nojsoncallback:1,sort:"interestingness-desc",min_upload_date:current/1e3-604800,method:"flickr.photos.search",text:getNeed(),lat:$scope.geoData.latitude,lon:$scope.geoData.longitude,radius:"3",content_type:"1",extras:"description, date_taken, geo, tags, views, media,path_alias, url_sq, url_z"};
+		var params={api_key:"8e8b0a8d39a7af07485e7b992084a350",per_page:10,format:"json",nojsoncallback:1,sort:"interestingness-desc",min_upload_date:current/1e3-691200,method:"flickr.photos.search",text:getNeed(),lat:$scope.geoData.latitude,lon:$scope.geoData.longitude,radius:"3",content_type:"1",extras:"description, date_taken, geo, tags, views, media,path_alias, url_sq, url_z"};
 		
     	$http({method: 'GET', url: "https://api.flickr.com/services/rest/", params: params}).
         success(function(data, status, headers, config) {
@@ -40,9 +40,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 			console.log(data);		
 			
 	        $scope.result.forEach(function (photo) {
-
 					var paramsFav={api_key:"8e8b0a8d39a7af07485e7b992084a350",photo_id:photo.id,format:"json",nojsoncallback:1,method:"flickr.photos.getFavorites",per_page:1};
-					
 			    	$http({method: 'GET', url: "https://api.flickr.com/services/rest/", params: paramsFav}).success(function(data, status, headers, config) {
 						photo['users_rating'] = data.photo.total;
 					});
@@ -53,9 +51,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 			console.log('error get flickr');
          });
 
-
 	});
-
 	
 
 });
