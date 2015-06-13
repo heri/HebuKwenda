@@ -1,0 +1,68 @@
+		<div class="row">
+			
+			
+			
+			
+			<div class="">
+				<!-- ****** NAVIGATION WIDGET ******* -->
+				<div id="nav-widget" class="btn-group btn-group-justified">
+					<div class="btn-group">
+						<a href="index.html"><button type="button" class="btn text-uppercase see"><i class="fa fa-camera fa-2x"></i>  See </button></a>
+					</div>
+					<div class="btn-group">
+						<a href="eat/"><button type="button" class="btn text-uppercase eat"><i class="fa fa-cutlery fa-2x"></i>  Eat</button></a>
+					</div>
+					<div class="btn-group">
+						<a href="watch/"><button type="button" class="btn text-uppercase watch"><i class="fa fa-ticket fa-2x"></i>  Watch </button></a>
+					</div>
+					<div class="btn-group">
+						<a href="social/"><button type="button" class="btn text-uppercase active watch"><i class="fa fa-users fa-2x"></i>  Social </button></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+			
+   
+   
+		<div class="row">
+			
+			<div class="">
+
+		    <div ng-show="loading"  style="text-align:center;"><img src="../images/ellipsis.svg"></div>
+	    <div class="movie-card panel" ng-show="photo.users_rating > 3" ng-repeat="photo in events">
+			<div class="movie-panel" style="background: #f5f5f5;">
+				<img ng-src="{{photo.event.photo.replace('/ms.jpg', '/o.jpg')}}" class="flickr-photo center-block" style="">
+			</div>
+			<!-- <div class="panel-footer">{{event.title.text}}</div>			 -->
+			<div class="panel-body">
+				<div class="media">
+					<div class="media-body" style="text-align:center">
+						<h2 class="media-heading">{{ event.title.text }} </h2>
+						{{ event.description[1].text }}
+
+					</div>
+				</div>
+			</div>			
+			<div class="actions panel-footer showtimes">
+				{{ event.description[0].text }}
+            </div>
+			
+						
+			<div class="actions panel-footer">
+               <div class="btn-group btn-group-justified">
+                  <a class="btn btn-default" role="button" ng-href=""><i class="fa fa-location-arrow"></i> Go</a>
+                  <a class="btn btn-default share" role="button" ng-href="https://twitter.com/intent/tweet?text=Going+to+{{event.title.text}}+http%3A%2F%2FHebuKwenda.com"><i class="fa fa-users"></i> Share</a>
+                  <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{event.description[2].text.slice(0,1) }}</a>
+               </div>
+            </div>
+			
+			
+			
+			
+		</div>
+				
+				
+			<center id="signature">Crafted with ♥ by <a href="http://twitter.com/heri">heri</a></center>
+			</div>
+    	</div>

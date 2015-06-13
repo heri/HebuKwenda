@@ -37,7 +37,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
         success(function(data, status, headers, config) {
 			$scope.result = data.photos.photo;
 			$scope.loading = false;
-			console.log(data);		
+			console.log(data);
 			
 	        $scope.result.forEach(function (photo) {
 					var paramsFav={api_key:"8e8b0a8d39a7af07485e7b992084a350",photo_id:photo.id,format:"json",nojsoncallback:1,method:"flickr.photos.getFavorites",per_page:1};
