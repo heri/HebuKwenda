@@ -8,43 +8,19 @@ var app = angular.module('event', ['ngRoute', 'geolocation', 'angularReverseGeoc
     }]);
 	
 
-app.controller('EventsController', function($scope, $http, eventsSearch) {	
+app.controller('EventsController', function($scope, $http) {	
 	$scope.loading = true;
-	
-	$http.defaults.useXDomain = true;
-	
-	
     $http.get('https://www.kimonolabs.com/api/3a6iwfho?apike=iiDTrAT8sYuyhaOMh2O2TwVb8auHKckz')
         .success(function(data) {
-			var movies = data.results.events;
+			console.log(data.results.events);
 			$scope.loading = false;
+			$scope.events = data.results.events;
         });
 	
-	// eventsSearch.fetchLocal(function(data){
-	// 	var movies = data.results.events;
-	// 	$scope.loading = false;
-	// });
-	
-})
-
-app.factory('eventsSearch', function($resource){
-	return {
-		fetchLocal: function(callback){
-
-			var api = $resource('https://www.kimonolabs.com/api/3a6iwfho', {
-				apikey: 'iiDTrAT8sYuyhaOMh2O2TwVb8auHKckz'
-			}, {
-				fetch:{method:'GET'}
-			});
-
-			api.fetch({}, function(response){
-				console.log(response);
-				callback(response);
-			});
-		}
+	$scope.orderByNeed = function(item) {
+		return - item.description[2].text.slice(0,1);
 	}
-});
-
+})
 
 app.directive('flickrs', function() {
 		return {

@@ -7,17 +7,18 @@
 				<!-- ****** NAVIGATION WIDGET ******* -->
 				<div id="nav-widget" class="btn-group btn-group-justified">
 					<div class="btn-group">
-						<a href="index.html"><button type="button" class="btn text-uppercase see"><i class="fa fa-camera fa-2x"></i>  See </button></a>
+						<a href="../"><button type="button" class="btn text-uppercase see"><i class="fa fa-camera fa-2x"></i>  See </button></a>
 					</div>
 					<div class="btn-group">
-						<a href="eat/"><button type="button" class="btn text-uppercase eat"><i class="fa fa-cutlery fa-2x"></i>  Eat</button></a>
+						<a href="."><button type="button" class="btn text-uppercase active watch"><i class="fa fa-users fa-2x"></i>  Social </button></a>
 					</div>
 					<div class="btn-group">
-						<a href="watch/"><button type="button" class="btn text-uppercase watch"><i class="fa fa-ticket fa-2x"></i>  Watch </button></a>
+						<a href="../eat"><button type="button" class="btn text-uppercase eat"><i class="fa fa-cutlery fa-2x"></i>  Eat</button></a>
 					</div>
 					<div class="btn-group">
-						<a href="social/"><button type="button" class="btn text-uppercase active watch"><i class="fa fa-users fa-2x"></i>  Social </button></a>
+						<a href="../watch/"><button type="button" class="btn text-uppercase watch"><i class="fa fa-ticket fa-2x"></i>  Watch </button></a>
 					</div>
+
 
 				</div>
 			</div>
@@ -30,11 +31,10 @@
 			<div class="">
 
 		    <div ng-show="loading"  style="text-align:center;"><img src="../images/ellipsis.svg"></div>
-	    <div class="movie-card panel" ng-show="photo.users_rating > 3" ng-repeat="photo in events">
+	    <div class="movie-card panel"  ng-hide="event.title.text.indexOf('Yelp') > -1" ng-repeat="event in events | orderBy:orderByNeed">
 			<div class="movie-panel" style="background: #f5f5f5;">
-				<img ng-src="{{photo.event.photo.replace('/ms.jpg', '/o.jpg')}}" class="flickr-photo center-block" style="">
+				<img ng-src="{{event.photo.src.replace('/ms.jpg', '/o.jpg')}}" class="flickr-photo center-block" style="">
 			</div>
-			<!-- <div class="panel-footer">{{event.title.text}}</div>			 -->
 			<div class="panel-body">
 				<div class="media">
 					<div class="media-body" style="text-align:center">
