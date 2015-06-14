@@ -2,7 +2,6 @@ function randomString(n,e){for(var r="",t=n;t>0;--t)r+=e[Math.round(Math.random(
 
 var app = angular.module('eat', ['geolocation', 'ngRoute']);
 
-
 app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function($scope, MyYelpAPI, geolocation) {
 	$scope.businesses = [];
 	$scope.loading = true;
@@ -13,12 +12,9 @@ app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function(
         $('.photoModal').modal('show');
         if($scope.modalOpened) return;
         $('.photoModal').modal('show');
-        $('.photoModal').on('hide.bs.modal', function (e) {
-            $scope.modalOpened = false;
-        });
+        $('.photoModal').on('hide.bs.modal', function (e) {$scope.modalOpened = false;});
         $scope.modalOpened = true;
     },
-	
 	
 	geolocation.getLocation().then(function(data){
 		geoData = data.coords;
@@ -34,7 +30,6 @@ app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function(
 }]).factory("MyYelpAPI", function($http) {
 	return {
 		"retrieveYelp": function(geoData, callback) {
-		
 			var lat = geoData.latitude;
 			var lon = geoData.longitude;
 			var method = 'GET';
@@ -44,9 +39,7 @@ app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function(
 				ll: lat + ',' + lon,
 				oauth_consumer_key: 'fp2-QEWAkpGNtEpbNg0Bqw',oauth_token: 'et0LsDh2Q7oEwBIuCK_fESvMclBMXoNI',oauth_signature_method: "HMAC-SHA1",oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),oauth_timestamp: new Date().getTime(),
 				term: getNeed(),
-				sort: '2',
-				limit: '5',
-				radius_filter: '1200',
+				sort: '2',limit: '5',adius_filter: '1200',
 				category_filter: 'restaurants,coffee,bars,landmarks,arts'
 			};
 			var consumerSecret = 'cjt65LRYSM1iqU1766CQLrvYmEA';var tokenSecret = 'zYMatKtjA07897IQZDqyUgxpaR4';var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
@@ -59,7 +52,6 @@ app.controller('EatController', ['$scope', 'MyYelpAPI', 'geolocation', function(
 		templateUrl: '../partials/eat.html'
 	};
 });
-
 app.directive('login', function() {
 		return {
 			templateUrl: '../partials/login.html'

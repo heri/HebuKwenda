@@ -38,21 +38,17 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 			$scope.result = data.photos.photo;
 			$scope.loading = false;
 			console.log(data);
-			
 	        $scope.result.forEach(function (photo) {
 					var paramsFav={api_key:"8e8b0a8d39a7af07485e7b992084a350",photo_id:photo.id,format:"json",nojsoncallback:1,method:"flickr.photos.getFavorites",per_page:1};
 			    	$http({method: 'GET', url: "https://api.flickr.com/services/rest/", params: paramsFav}).success(function(data, status, headers, config) {
 						photo['users_rating'] = data.photo.total;
 					});
 	         });
-
         }).
         error(function(data, status, headers, config) {
 			console.log('error get flickr');
          });
-
 	});
-	
 
 });
 
