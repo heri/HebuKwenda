@@ -1,8 +1,8 @@
 		<div class="row">
-			
-			
-			
-			
+
+
+
+
 			<div class="">
 				<!-- ****** NAVIGATION WIDGET ******* -->
 				<div id="nav-widget" class="btn-group btn-group-justified">
@@ -23,11 +23,11 @@
 				</div>
 			</div>
 		</div>
-			
-   
-   
+
+
+
 		<div class="row">
-			
+
 			<div class="">
 
 		    <div ng-show="loading"  style="text-align:center;"><img src="images/ellipsis.svg"></div>
@@ -35,10 +35,10 @@
 			<div class="movie-panel" style="background: #f5f5f5;">
 				<a ng-href="https://www.google.com/maps?q=loc:{{photo.latitude}},{{photo.longitude}}&radius=3"  class="center-block"><img ng-src="{{photo.url_z}}" class="flickr-photo center-block" style=""></a>
 			</div>
-			<div class="panel-footer">{{photo.title}}</div>			
+			<div class="panel-footer">{{photo.title}}</div>
 			<div class="actions panel-footer eateries"><reverse-geocode lat="{{photo.latitude}}" lng="{{photo.longitude}}"></reverse-geocode></div>
-			
-			
+
+
 			<div class="actions panel-footer">
                <div class="btn-group btn-group-justified">
                   <a class="btn btn-default" role="button" ng-href="http://maps.google.com/maps?q=loc:{{photo.latitude}},{{photo.longitude}}&radius=1"><i class="fa fa-location-arrow"></i> Go</a>
@@ -46,13 +46,13 @@
                   <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{photo.users_rating }}</a>
                </div>
             </div>
-			
-			
-			
-			
+
+
+
+
 		</div>
-				
-				
+
+
 			<center id="signature">Crafted with ♥ by <a href="http://medium.com/@heri">heri</a></center>
 			</div>
     	</div>

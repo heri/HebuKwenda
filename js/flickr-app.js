@@ -6,7 +6,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 	$scope.photos = [];
     $scope.modalOpened = false;
 	$scope.loading = true;
-	
+
     $scope.openLogin = function(){
         var self = this;
         $('.photoModal').modal('show');
@@ -17,7 +17,7 @@ app.controller('NotableController',function($scope, $http, geolocation) {
         });
         $scope.modalOpened = true;
     }
-	
+
 	$scope.orderByNeed = function(item) {
 		if ($scope.geoData && item.users_rating && item.users_rating > 3) {
 			a = item.latitude - $scope.geoData.latitude;b = item.longitude - $scope.geoData.longitude;
@@ -25,14 +25,14 @@ app.controller('NotableController',function($scope, $http, geolocation) {
 		} else {return 0;}
 	}
 
-	
+
 	geolocation.getLocation().then(function(data){
 		$scope.geoData = data.coords;
 		console.log($scope.geoData);
 		current = new Date().getTime();
 
 		var params={api_key:"8e8b0a8d39a7af07485e7b992084a350",per_page:10,format:"json",nojsoncallback:1,sort:"interestingness-desc",min_upload_date:current/1e3-691200,method:"flickr.photos.search",text:getNeed(),lat:$scope.geoData.latitude,lon:$scope.geoData.longitude,radius:"3",content_type:"1",extras:"description, date_taken, geo, tags, views, media,path_alias, url_sq, url_z"};
-		
+
     	$http({method: 'GET', url: "https://api.flickr.com/services/rest/", params: params}).
         success(function(data, status, headers, config) {
 			$scope.result = data.photos.photo;
@@ -57,7 +57,7 @@ app.directive('flickrs', function() {
 			templateUrl: 'partials/see.html'
 		};
 	});
-	
+
 app.directive('login', function() {
 		return {
 			templateUrl: 'partials/login.html'

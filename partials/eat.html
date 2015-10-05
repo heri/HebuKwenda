@@ -1,7 +1,7 @@
 
 <div class="row">
-			
-			
+
+
 	<div class="">
 		<!-- ****** NAVIGATION WIDGET ******* -->
 		<div id="nav-widget" class="btn-group btn-group-justified">
@@ -20,18 +20,18 @@
 		</div>
 	</div>
 </div>
-			
-   
-   
+
+
+
 <div class="row">
-	
+
 	<div>
 
 
 		<div ng-show="loading"  style="text-align:center;"><img src="../images/ellipsis.svg"></div>
 
-			
-				
+
+
 		<div class="movie-card panel" ng-repeat="business in businesses" ng-show="!business.isclosed && business.rating > 4 && business.review_count > 6 ">
 			<div class="movie-panel" style="background: #f5f5f5; max-height:390px;overflow:hidden">
 				<a ng-href="http://maps.google.com/?q={{business.name}}+montreal&radius=3"><img ng-src="{{business.image_url.replace('/ms.jpg', '/o.jpg')}}"  class="center-block yelp-photo"></a>
@@ -55,18 +55,17 @@
                   <a class="btn btn-default highlight" role="button" ng-click="openLogin()"><i class="fa fa-heart"></i> {{(business.rating - 4) * 10}} </a>
                </div>
             </div>
-			
+
 
 		</div>
-				
-				
+
+
 			<center id="signature">Crafted with ♥ by <a href="http://medium.com/@heri">heri</a></center>
-				
-				
+
+
 	</div>
-      
-      
-     
+
+
+
 
 </div>
-
